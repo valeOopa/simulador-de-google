@@ -26,8 +26,8 @@ const voiceRecognition = () =>{
 	document.querySelector(".voice-search__result-text").innerHTML = "Habla ahora";
     let recognition = new window.SpeechRecognition();
 
-    recognition.onresult = (event) => {
-    let voiceText = event.results[0][0].transcript;
+    recognition.onresult = e => {
+    let voiceText = e.results[0][0].transcript;
     document.querySelector(".voice-search__result-text").innerHTML = voiceText;
     recognition.stop();
     setTimeout(()=>{
